@@ -30,7 +30,7 @@ const Chat = () => {
 
     const fetchConversations = async () => {
         try {
-            const { data } = await axios.get('http://localhost:5002/api/chat');
+            const { data } = await axios.get('https://chatbot-1-35dk.onrender.com/api/chat');
             setConversations(data);
         } catch (error) {
             console.error('Error fetching conversations:', error);
@@ -48,7 +48,7 @@ const Chat = () => {
             setSidebarOpen(false);
 
             // Fetch full details (optional if list already has messages, but good for heavy loads)
-            const { data } = await axios.get(`http://localhost:5002/api/chat/${id}`);
+            const { data } = await axios.get(`https://chatbot-1-35dk.onrender.com/api/chat/${id}`);
             setCurrentChat(data);
             setMessages(data.messages);
         } catch (error) {
@@ -72,7 +72,7 @@ const Chat = () => {
         setLoading(true);
 
         try {
-            const { data } = await axios.post('http://localhost:5002/api/chat', {
+            const { data } = await axios.post('https://chatbot-1-35dk.onrender.com/api/chat', {
                 message: userMessage,
                 conversationId: currentChat?._id
             });

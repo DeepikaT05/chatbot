@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (email, password) => {
         try {
-            const { data } = await axios.post('http://localhost:5002/api/auth/login', {
+            const { data } = await axios.post('https://chatbot-1-35dk.onrender.com/api/auth/login', {
                 email,
                 password,
             });
@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }) => {
 
     const signup = async (username, email, password) => {
         try {
-            const { data } = await axios.post('http://localhost:5002/api/auth/register', {
+            const { data } = await axios.post('https://chatbot-1-35dk.onrender.com/api/auth/register', {
                 username,
                 email,
                 password,
